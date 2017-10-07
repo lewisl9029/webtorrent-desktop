@@ -99,6 +99,25 @@ module.exports = class TorrentController {
     if (this.state.saved.prefs.activeTorrentsLimit !== 0) {
       ipcRenderer.send('wt-stop-torrenting', torrentSummary.infoHash)
       torrentSummary.status = 'paused'
+
+      const incompleteTorrents = this.state.saved.torrents.filter(
+        torrentSummary =>
+          !torrentSummary.progress ||
+          torrentSummary.progress.progress !== 1
+      )
+
+      if (incompleteTorrents.length > 0) {
+        const nextTorrent = incompleteTorrents[0]
+
+        ipcRenderer.send(
+          'wt-start-torrenting',
+          nextTorrent.torrentKey,
+          TorrentSummary.getTorrentId(nextTorrent),
+          nextTorrent.path,
+          nextTorrent.fileModtimes,
+          nextTorrent.selections
+        )
+      }
     }
 
     dispatch('update')
