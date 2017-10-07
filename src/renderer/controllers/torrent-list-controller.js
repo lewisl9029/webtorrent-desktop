@@ -257,7 +257,6 @@ module.exports = class TorrentListController {
     this.state.saved.torrents
       .filter(
         torrentSummary =>
-          torrentSummary.status === 'paused' &&
           torrentSummary.progress &&
           torrentSummary.progress.progress === 1
       )
