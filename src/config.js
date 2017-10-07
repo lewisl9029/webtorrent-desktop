@@ -33,38 +33,7 @@ module.exports = {
 
   CONFIG_PATH: getConfigPath(),
 
-  DEFAULT_TORRENTS: [
-    {
-      testID: 'bbb',
-      name: 'Big Buck Bunny',
-      posterFileName: 'bigBuckBunny.jpg',
-      torrentFileName: 'bigBuckBunny.torrent'
-    },
-    {
-      testID: 'cosmos',
-      name: 'Cosmos Laundromat (Preview)',
-      posterFileName: 'cosmosLaundromat.jpg',
-      torrentFileName: 'cosmosLaundromat.torrent'
-    },
-    {
-      testID: 'sintel',
-      name: 'Sintel',
-      posterFileName: 'sintel.jpg',
-      torrentFileName: 'sintel.torrent'
-    },
-    {
-      testID: 'tears',
-      name: 'Tears of Steel',
-      posterFileName: 'tearsOfSteel.jpg',
-      torrentFileName: 'tearsOfSteel.torrent'
-    },
-    {
-      testID: 'wired',
-      name: 'The WIRED CD - Rip. Sample. Mash. Share',
-      posterFileName: 'wiredCd.jpg',
-      torrentFileName: 'wiredCd.torrent'
-    }
-  ],
+  DEFAULT_TORRENTS: [],
 
   DELAYED_INIT: 3000 /* 3 seconds */,
 
