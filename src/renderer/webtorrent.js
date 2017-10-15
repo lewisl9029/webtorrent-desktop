@@ -62,7 +62,13 @@ const PEER_ID = Buffer.from(VERSION_PREFIX + crypto.randomBytes(9).toString('bas
 
 // Connect to the WebTorrent and BitTorrent networks. WebTorrent Desktop is a hybrid
 // client, as explained here: https://webtorrent.io/faq
-let client = window.client = new WebTorrent({ peerId: PEER_ID })
+let client = window.client = new WebTorrent({
+  peerId: PEER_ID,
+  maxConns: 25,
+  dht: {
+    concurrency: 8
+  }
+})
 
 // WebTorrent-to-HTTP streaming sever
 let server = null

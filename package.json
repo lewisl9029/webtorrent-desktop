@@ -101,6 +101,7 @@
     "gh-release": "gh-release",
     "open-config": "node ./bin/open-config.js",
     "package": "node ./bin/package.js",
+    "package-custom": "npm run package -- win32 --package=exe",
     "prepublish": "npm run build",
     "start": "npm run build && electron .",
     "test": "standard && depcheck --ignores=buble,nodemon,gh-release,standard --ignore-dirs=build,dist && node ./bin/extra-lint.js",
